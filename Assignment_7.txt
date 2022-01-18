@@ -1,0 +1,25 @@
+create table worker (w_id int, first_Name varchar(25), Dept varchar(25),
+Salary float);
+
+insert into worker values
+ (101,"Aman","Sales",35000),
+ (102,"Tanisha","Manufacture",46000),
+ (103,"Haroreet","Construction",89000),
+ (104,"Ram","HR",358000),
+ (105,"Vishal","Sales",56000),
+ (106,"Shubham","Manufacture",67900),
+ (107,"Rohan","Construction",70000),
+ (108,"Priyanka","Purchase",65000);
+
+
+Q-13. Write an SQL query to show only odd rows from a table.
+
+Ans: select * from worker 
+     where w_id % 2=1;
+
+
+Q-14. Write an SQL query to clone a new table from another table.
+
+Ans: create table WorkerClone like worker;
+
+
