@@ -1,0 +1,26 @@
+create table worker (w_id int, first_Name varchar(25), Dept varchar(25),
+Salary float);
+
+insert into worker values
+ (101,"Aman","Sales",35000),
+ (102,"Tanisha","Manufacture",46000),
+ (103,"Haroreet","Construction",89000),
+ (104,"Ram","HR",358000),
+ (105,"Vishal","Sales",56000),
+ (106,"Shubham","Manufacture",67900),
+ (107,"Rohan","Construction",70000),
+ (108,"Priyanka","Purchase",65000);
+
+
+Q-1. Write an SQL query to fetch “FIRST_NAME” from Worker table using the alias
+name as <WORKER_NAME>?
+
+Ans:  select first_name as Worker_Name from worker;
+
+Q-2. Write an SQL query to fetch unique values of DEPARTMENT from Worker table.
+
+Ans:  select distinct dept from worker;
+
+Q-3. Write an SQL query to show the last 5 record from a table.
+
+Ans: select * from worker order by w_id desc limit 5;
