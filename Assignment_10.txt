@@ -1,0 +1,44 @@
+create table employee (Emp_id int primary key, Name varchar(25), Gender char(1),
+ Age int, Salary float);
+
+ insert into employee values
+ (206,"Aman","M",24,350000),
+ (208,"Tanisha","F",27,460000),
+ (203,"Haroreet","F",29,890000),
+ (201,"Ram","M",23,358000),
+ (205,"Vishal","M",25,560000),
+ (204,"Shubham","M",29,679000),
+ (207,"Rohan","M",28,700000),
+ (210,"Priyanka","F",27,650000);
+
+
+create table Dept (Dept_id int  , Emp_id int , Department varchar(25), City varchar(15), Pincode int);
+ describe emp_dept;
+
+insert into Dept values
+(21,205,"HR","Bangalore",560076),
+(23,203,"Developer","Delhi",879009),
+(23,206,"Developer","Pune",476501),
+(22,207,"Sales","Bangalore",568077),
+(21,201,"HR","Pune",564487),
+(22,210,"Sales","Mumbai",656009),
+(24,209,"Analyst","Ahmedabad",678879),
+(25,200,"Analyst","Pune",238977);
+
+
+Q-19. Write an SQL query to determine the 5th highest salary without using TOP or limit method.
+
+Ans: select Salary
+     from employee e1
+     where n-1 = select count( distinct( e2.salary ) )
+     from employee e2
+     where e2.salary >= e1.Salary);
+
+Q-20. Write an SQL query to fetch the list of employees with the same salary.
+
+Ans:  select distinct e.Emp_id , e.Name ,e.Salary 
+      from Employee as e , Employee as e1
+      where e.salary = e1.salary
+      and e.emp_id != e1.emp_id;
+
+
