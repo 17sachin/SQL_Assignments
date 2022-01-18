@@ -1,0 +1,31 @@
+create table worker (w_id int, first_Name varchar(25), Dept varchar(25),
+Salary float);
+
+insert into worker values
+ (101,"Aman","Sales",35000),
+ (102,"Tanisha","Manufacture",46000),
+ (103,"Haroreet","Construction",89000),
+ (104,"Ram","HR",358000),
+ (105,"Vishal","Sales",56000),
+ (106,"Shubham","Manufacture",67900),
+ (107,"Rohan","Construction",70000),
+ (108,"Priyanka","Purchase",65000);
+
+
+Q-1. Write an SQL query to print the FIRST_NAME from Worker table after replacing ‘a’ with ‘A’.
+
+Ans: select replace(first_name,'a','A') from worker; 
+ 
+
+Q-2. Write an SQL query to print all Worker details from the Worker table order by
+FIRST_NAME Ascending and DEPARTMENT Descending.
+
+Ans:  select * from worker 
+      order by first_name asc ,dept desc;
+
+
+Q-3.Write an SQL query to fetch the names of workers who earn the highest salary.
+
+Ans:   select first_name , max(salary) from worker 
+       where salary=(select max(salary) from worker)
+       group by first_name;
