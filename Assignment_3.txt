@@ -1,0 +1,29 @@
+create table worker (w_id int, first_Name varchar(25), Dept varchar(25),
+Salary float);
+
+insert into worker values
+ (101,"Aman","Sales",35000),
+ (102,"Tanisha","Manufacture",46000),
+ (103,"Haroreet","Construction",89000),
+ (104,"Ram","HR",358000),
+ (105,"Vishal","Sales",56000),
+ (106,"Shubham","Manufacture",67900),
+ (107,"Rohan","Construction",70000),
+ (108,"Priyanka","Purchase",65000);
+
+
+Q-1. Write an SQL query to print the FIRST_NAME from Worker table after removing
+white spaces from the right side.
+
+Ans:  Select RTRIM(first_name) from Worker;
+ 
+
+Q-2. Write an SQL query that fetches the unique values of DEPARTMENT from Worker
+table and prints its length.
+
+Ans:  select distinct dept , length(dept) from worker;
+
+
+Q-3.Write an SQL query to fetch nth max salaries from a table.
+
+Ans:  select salary from worker order by salary desc limit 7,1;
