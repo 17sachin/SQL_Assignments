@@ -1,0 +1,32 @@
+create table worker (w_id int, first_Name varchar(25), Dept varchar(25),
+Salary float);
+
+insert into worker values
+ (101,"Aman","Sales",35000),
+ (102,"Tanisha","Manufacture",46000),
+ (103,"Haroreet","Construction",89000),
+ (104,"Ram","HR",358000),
+ (105,"Vishal","Sales",56000),
+ (106,"Shubham","Manufacture",67900),
+ (107,"Rohan","Construction",70000),
+ (108,"Priyanka","Purchase",65000);
+
+
+Q-1. Write an SQL query to print details of workers excluding first names, “Vipul” and
+     “Satish” from Worker table.
+
+Ans:  select * from worker 
+      where first_name not in ("Ram","Vishal");
+ 
+
+Q-2. Write an SQL query to print details of the Workers whose FIRST_NAME ends with
+     ‘h’ and contains six alphabets.
+
+Ans:  select * from worker 
+      where first_name like '-----h%';
+
+
+Q-3.Write a query to validate Email of Employee.
+
+Ans: select * from worker 
+     where email like '%@gmail.com';
