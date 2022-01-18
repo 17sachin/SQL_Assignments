@@ -1,0 +1,41 @@
+create table employee (Emp_id int primary key, Name varchar(25), Gender char(1),
+ Age int, Salary float);
+
+ insert into employee values
+ (206,"Aman","M",24,350000),
+ (208,"Tanisha","F",27,460000),
+ (203,"Haroreet","F",29,890000),
+ (201,"Ram","M",23,358000),
+ (205,"Vishal","M",25,560000),
+ (204,"Shubham","M",29,679000),
+ (207,"Rohan","M",28,700000),
+ (210,"Priyanka","F",27,650000);
+
+
+create table Dept (Dept_id int  , Emp_id int , Department varchar(25), City varchar(15), Pincode int);
+ describe emp_dept;
+
+insert into Dept values
+(21,205,"HR","Bangalore",560076),
+(23,203,"Developer","Delhi",879009),
+(23,206,"Developer","Pune",476501),
+(22,207,"Sales","Bangalore",568077),
+(21,201,"HR","Pune",564487),
+(22,210,"Sales","Mumbai",656009),
+(24,209,"Analyst","Ahmedabad",678879),
+(25,200,"Analyst","Pune",238977);
+
+
+Q-15. Write an SQL query to fetch intersecting records of two tables.
+
+Ans: select * from dept
+     cross join
+     employee;
+
+
+Q-16. Write an SQL query to show records from one table that another table does not
+have.
+
+Ans: select * from employee as e left join dept as d on e.emp_id=d.emp_id;
+
+
